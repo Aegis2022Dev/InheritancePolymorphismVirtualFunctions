@@ -41,7 +41,7 @@ using namespace std;
 
 #include "Vehicle.h"
 #include "Car.h"
-
+#include "Truck.h"
 
 /****BEGIN main() METHOD****/
 
@@ -80,7 +80,20 @@ int main()
     Car c(manufac, year, numDoor);
     c.displayInfo();
 
+    cout << "\nTruck:\n";
+    cout << "Enter the manufacturer:  ";
+    getline(cin, manufac);
 
+    cout << "Enter the year built: ";
+    cin >> year;
+    cin.ignore();
+
+    cout << "Enter the towing capacity: ";
+    cin >> cap;
+    cin.ignore();
+
+    Truck t(manufac, year, cap);
+    t.displayInfo();
 
     cout << endl;
 
