@@ -37,34 +37,52 @@
 
 using namespace std;
 
-#include "Vehicle.h"
+//Don't forget to include all custom class headers AFTER using namespace!
 
-//DECLARE FORWARD DECLARATIONS, METHOD & STRUCTURES DEFINITIONS FOR FUNCTION PROTOTYPES
+#include "Vehicle.h"
+#include "Car.h"
 
 
 /****BEGIN main() METHOD****/
 
 int main()
 {
+
     string manufac;
     int year;
-    int numDoor;
-    int cap;
-
+    int numDoor = 0;
+    int cap = 0;
     cout << "Vehicle program " << endl;
 
-    cout << "\nVehicle:\n";
+    cout << "\nVehicle\n";
     cout << "Enter the manufacturer:  ";
     getline(cin, manufac);
 
     cout << "Enter the year built: ";
     cin >> year;
-    cin.ignore(); //necessary due to change in user input data type
+    cin.ignore();
 
     Vehicle v(manufac, year);
-    v.displayInfo(); //call the dynamically bound virtual displayInfo() method for the vehicle superclass
+    v.displayInfo();
+
+    cout << "\nCar\n";
+    cout << "Enter the manufacturer:  ";
+    getline(cin, manufac);
+
+    cout << "Enter the year built: ";
+    cin >> year;
+    cin.ignore();
+
+    cout << "Enter the number of doors: ";
+    cin >> numDoor;
+    cin.ignore();
+
+    Car c(manufac, year, numDoor);
+    c.displayInfo();
 
 
+
+    cout << endl;
 
 	system("pause");
 	return 0;

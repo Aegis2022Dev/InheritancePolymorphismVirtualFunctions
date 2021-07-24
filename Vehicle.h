@@ -1,26 +1,26 @@
 #ifndef VEHICLE_H
 #define VEHICLE_H
-#include <iostream>
 
-using namespace std;
+//Create and define the Vehcile class
+
 class Vehicle
 {
-private:  //shows encapsulation
-    string manufacturer;
-    int yearBuilt;
-
 public:
-    //Constructor definition
+    //constructor
     Vehicle(string manufacturer, int yearBuilt);
 
-    //getters and setters
+    //Getters and setters
+
     string getManufacturer();
     void setManufacturer(string manufacturer);
 
     int getYearBuilt();
     void setYearBuilt(int yearBuilt);
+    virtual void displayInfo(); //declare dynamically allocated method for dervied classes
 
-    virtual void displayInfo(); //dynamic method assignment
-};
+private:
+    string manufacturer;
+    int yearBuilt;
 
+}; //End Vehicle class
 #endif

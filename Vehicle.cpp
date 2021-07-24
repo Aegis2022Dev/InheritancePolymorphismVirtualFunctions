@@ -1,8 +1,9 @@
-#ifndef VEHICLE_CPP
-#define VEHICLE_CPP
 #include <iostream>
-#include "Vehicle.h"
+#include <string>
+
 using namespace std;
+
+#include "Vehicle.h"
 
 Vehicle::Vehicle(string manufacturer, int yearBuilt)
 {
@@ -10,12 +11,12 @@ Vehicle::Vehicle(string manufacturer, int yearBuilt)
     this->yearBuilt = yearBuilt;
 }
 
-//getters and setters
+//Getters and setters
+
 string Vehicle::getManufacturer()
 {
     return manufacturer;
 }
-
 void Vehicle::setManufacturer(string manufacturer)
 {
     this->manufacturer = manufacturer;
@@ -31,13 +32,9 @@ void Vehicle::setYearBuilt(int yearBuilt)
     this->yearBuilt = yearBuilt;
 }
 
-//this dynamically bound, virtual method of the base vehicle class will be overriden 
-//when inherited by all derived classess that utilize it
 void Vehicle::displayInfo()
 {
     cout << "\nVehicle Information:\n";
     cout << "Manufacturer: " << manufacturer << endl;
     cout << "Year Built:   " << yearBuilt << endl;
 }
-
-#endif
